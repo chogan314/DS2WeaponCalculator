@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>DS2 Weapon JSON generator</title>
+	<meta charset="utf-8">
+	<link href="site.css" rel="stylesheet" media="screen">
+</head>
+<body>
+
+	<div id="content_wrapper">
+		
+		<div>
+			<img id="header_img" src="dslogo2.png" alt="logo">
+		</div>
+		
+		<div id="form_wrapper">
+		
+			<div class="clear_block">
+				<div class="label">
+					<label for="name">Weapon Name:</label>
+				</div>
+				<div class="input">
+					<input id="name" type="text" maxlength="30">
+					<div id="name_error" class="error_message"></div>
+				</div>
+			</div>
+			<br>
+			
+			<fieldset class="clear_block">
+				<legend>Upgrades With</legend>
+				
+				<div class="label">
+					<label for="titanite">Titanite</label>
+				</div>
+				<div class="input">
+					<input type="radio" name="upgrades_with" id="titanite" value="titanite">
+				</div>
+				
+				<div class="label">
+					<label for="twinkling_titanite">Twinkling Titanite</label>
+				</div>
+				<div class="input">
+					<input type="radio" name="upgrades_with" id="twinkling_titanite" value="twinkling_titanite">
+				</div>
+				
+				<div class="label">
+					<label for="dragon_bone">Petrified Dragon Bone</label>
+				</div>
+				<div class="input">
+					<input type="radio" name="upgrades_with" id="dragon_bone" value="dragon_bone">
+				</div>
+				
+				<div id="upgrades_with_error" class="error_message"></div>
+				
+			</fieldset>
+			<br>
+			
+			<div class="clear_block">
+				<div class="label">
+					<label for="weapon_type">Weapon Type:</label>
+				</div>
+				<div class="input">
+					<input id="weapon_type" type="text" maxlength="30"><br>
+					<div id="weapon_type_error" class="error_message"></div>
+				</div>
+			</div>
+			<br>
+			
+			<div class="clear_block">
+				<div class="label">
+					<label for="damage_types">Damage Types:</label>
+				</div>
+				<div class="input">
+					<input id="damage_types" type="text" maxlength="30">
+					<div id="damage_types_error" class="error_message"></div>
+				</div>
+			</div>
+			<br>
+			
+			<fieldset class="clear_block">
+				<legend>Required Stats</legend>
+				
+				<div class="label">
+					<label for="req_strength">Strength:</label>
+				</div>
+				<div class="input">
+					<input id="req_strength" type="text" maxlength="2">
+					<div id="req_strength_error" class="error_message"></div>
+				</div>
+				
+				<div class="label">
+					<label for="req_dexterity">Dexterity:</label>
+				</div>
+				<div class="input">
+					<input id="req_dexterity" type="text" maxlength="2">
+					<div id="req_dexterity_error" class="error_message"></div>
+				</div>
+				
+				<div class="label">
+					<label for="req_intelligence">Intelligence:</label>
+				</div>
+				<div class="input">
+					<input id="req_intelligence" type="text" maxlength="2">
+					<div id="req_intelligence_error" class="error_message"></div>
+				</div>
+				
+				<div class="label">
+					<label for="req_faith">Faith:</label>
+				</div>
+				<div class="input">
+					<input id="req_faith" type="text" maxlength="2">
+					<div id="req_faith_error" class="error_message"></div>
+				</div>
+				
+			</fieldset>
+			<br>
+			
+			<fieldset class="clear_block">
+				<legend>Scaling</legend>
+				
+				<div class="label">
+					<label for="strength_scl">Strength:</label>
+				</div>
+				<div class="input">
+					<input id="strength_scl" type="text" maxlength="1">
+					<div id="strength_scl_error" class="error_message"></div>
+				</div>
+				
+				<div class="label">
+					<label for="dexterity_scl">Dexterity:</label>
+				</div>
+				<div class="input">
+					<input id="dexterity_scl" type="text" maxlength="1">
+					<div id="dexterity_scl_error" class="error_message"></div>
+				</div>
+				
+				<div class="label">
+					<label for="magic_scl">Magic:</label>
+				</div>
+				<div class="input">
+					<input id="magic_scl" type="text" maxlength="1">
+					<div id="magic_scl_error" class="error_message"></div>
+				</div>
+				
+				<div class="label">
+					<label for="fire_scl">Fire:</label>
+				</div>
+				<div class="input">
+					<input id="fire_scl" type="text" maxlength="1">
+					<div id="fire_scl_error" class="error_message"></div>
+				</div>
+				
+				<div class="label">
+					<label for="lightning_scl">Lightning:</label>
+				</div>
+				<div class="input">
+					<input id="lightning_scl" type="text" maxlength="1">
+					<div id="lightning_scl_error" class="error_message"></div>
+				</div>
+				
+				<div class="label">
+					<label for="dark_scl">Dark:</label>
+				</div>
+				<div class="input">
+					<input id="dark_scl" type="text" maxlength="1">
+					<div id="dark_scl_error" class="error_message"></div>
+				</div>
+				
+			</fieldset>
+			<br>
+			
+			<fieldset class="clear_block">
+				<legend>Base Damage</legend>
+				
+				<div class="label">
+					<label for="physical_dmg">Physical:</label>
+				</div>
+				<div class="input">
+					<input id="physical_dmg" type="text" maxlength="3">
+					<div id="physical_dmg_error" class="error_message"></div>
+				</div>
+				
+				<div class="label">
+					<label for="magic_dmg">Magic:</label>
+				</div>
+				<div class="input">
+					<input id="magic_dmg" type="text" maxlength="3">
+					<div id="magic_dmg_error" class="error_message"></div>
+				</div>
+				
+				<div class="label">
+					<label for="fire_dmg">Fire:</label>
+				</div>
+				<div class="input">
+					<input id="fire_dmg" type="text" maxlength="3">
+					<div id="fire_dmg_error" class="error_message"></div>
+				</div>
+				
+				<div class="label">
+					<label for="lightning_dmg">Lightning:</label>
+				</div>
+				<div class="input">
+					<input id="lightning_dmg" type="text" maxlength="3">
+					<div id="lightning_dmg_error" class="error_message"></div>
+				</div>
+				
+				<div class="label">
+					<label for="dark_dmg">Dark:</label>
+				</div>
+				<div class="input">
+					<input id="dark_dmg" type="text" maxlength="3">
+					<div id="dark_dmg_error" class="error_message"></div>
+				</div>
+				
+			</fieldset>
+			<br>
+			
+			<div class="clear_block">
+				<div class="label">
+					<label for="poison_effect">Poison Effect:</label>
+				</div>
+				<div class="input">
+					<input id="poison_effect" type="text" maxlength="3">
+					<div id="poison_effect_error" class="error_message"></div>
+				</div>
+			</div>
+			<br>
+			
+			<div class="clear_block">
+				<div class="label">
+					<label for="bleed_effect">Bleed Effect:</label>
+				</div>
+				<div class="input">
+					<input id="bleed_effect" type="text" maxlength="3">
+					<div id="bleed_effect_error" class="error_message"></div>
+				</div>
+			</div>
+			<br>
+			
+			<div class="clear_block">
+				<div class="label">
+					<label for="counter_strength">Counter Strength:</label>
+				</div>
+				<div class="input">
+					<input id="counter_strength" type="text" maxlength="3">
+					<div id="counter_strength_error" class="error_message"></div>
+				</div>
+			</div>
+			<br>
+			
+			<div class="clear_block">
+				<div class="label">
+					<label for="poise_damage">Poise Damage:</label>
+				</div>
+				<div class="input">
+					<input id="poise_damage" type="text" maxlength="3">
+					<div id="poise_damage_error" class="error_message"></div>
+				</div>
+			</div>
+			<br>
+			
+			<div class="clear_block">
+				<div class="label">
+					<label for="shot_range">Shot Range:</label>
+				</div>
+				<div class="input">
+					<input id="shot_range" type="text" maxlength="3">
+					<div id="shot_range_error" class="error_message"></div>
+				</div>
+			</div>
+			<br>
+			
+			<div class="clear_block">
+				<div class="label">
+					<label for="casting_speed">Casting Speed:</label>
+				</div>
+				<div class="input">
+					<input id="casting_speed" type="text" maxlength="3">
+					<div id="casting_speed_error" class="error_message"></div>
+				</div>
+			</div>
+			<br>
+			
+			<fieldset class="clear_block">
+				<legend>Damage Reduction</legend>
+				
+				<div class="label">
+					<label for="physical_def">Physical:</label>
+				</div>
+				<div class="input">
+					<input id="physical_def" type="text" maxLength="6">
+					<div id="physical_def_error" class="error_message"></div>
+				</div>
+				
+				<div class="label">
+					<label for="magic_def">Magic:</label>
+				</div>
+				<div class="input">
+					<input id="magic_def" type="text" maxLength="6">
+					<div id="magic_def_error" class="error_message"></div>
+				</div>
+				
+				<div class="label">
+					<label for="fire_def">Fire:</label>
+				</div>
+				<div class="input">
+					<input id="fire_def" type="text" maxLength="6">
+					<div id="fire_def_error" class="error_message"></div>
+				</div>
+				
+				<div class="label">
+					<label for="lightning_def">Lightning:</label>
+				</div>
+				<div class="input">
+					<input id="lightning_def" type="text" maxLength="6">
+					<div id="lightning_def_error" class="error_message"></div>
+				</div>
+				
+				<div class="label">
+					<label for="dark_def">Dark:</label>
+				</div>
+				<div class="input">
+					<input id="dark_def" type="text" maxLength="6">
+					<div id="dark_def_error" class="error_message"></div>
+				</div>
+				
+				<div class="label">
+					<label for="poison_def">Poison:</label>
+				</div>
+				<div class="input">
+					<input id="poison_def" type="text" maxLength="6">
+					<div id="poison_def_error" class="error_message"></div>
+				</div>
+				
+				<div class="label">
+					<label for="bleed_def">Bleed:</label>
+				</div>
+				<div class="input">
+					<input id="bleed_def" type="text" maxLength="6">
+					<div id="bleed_def_error" class="error_message"></div>
+				</div>
+				
+				<div class="label">
+					<label for="petrify_def">Petrify:</label>
+				</div>
+				<div class="input">
+					<input id="petrify_def" type="text" maxLength="6">
+					<div id="petrify_def_error" class="error_message"></div>
+				</div>
+				
+				<div class="label">
+					<label for="curse_def">Curse:</label>
+				</div>
+				<div class="input">
+					<input id="curse_def" type="text" maxLength="6">
+					<div id="curse_def_error" class="error_message"></div>
+				</div>
+				
+			</fieldset>
+			<br>
+			
+			<div class="clear_block">
+				<div class="label">
+					<label for="stability">Stability:</label>
+				</div>
+				<div class="input">
+					<input id="stability" type="text" maxLength="3">
+					<div id="stability_error" class="error_message"></div>
+				</div>
+			</div>
+			<br>
+			
+			<div class="clear_block">
+				<div class="label">
+					<label for="durability">Durability:</label>
+				</div>
+				<div class="input">
+					<input id="durability" type="text" maxLength="3">
+					<div id="durability_error" class="error_message"></div>
+				</div>
+			</div>
+			<br>
+			
+			<div class="clear_block">
+				<div class="label">
+					<label for="weight">Weight:</label>
+				</div>
+				<div class="input">
+					<input id="weight" type="text" maxLength="6">
+					<div id="weight_error" class="error_message"></div>
+				</div>
+			</div>
+			<br>
+			
+			<div class="clear_block">
+				<div class="label">
+					<label for="damage_samples">Damage Samples:</label>
+				</div>
+				<div class="input">
+					<textarea id="damage_samples" rows="20" cols="30"></textarea>
+				</div>
+			</div>
+			
+			<button type="button" onclick="processInput()">Submit</button>
+			
+		</div>
+		
+		<div id="figure_wrapper">
+			<img id="figure1" src="figure1v2.png" alt="figure1">
+			<img id="figure1-2" src="figure1-2.png" alt="figure1-2">
+			<img id="figure2" src="figure2.png" alt="figure2">
+		</div>
+		
+	</div>
+	
+	<script>
+		function processInput() { 
+		
+			var requiredStatFields = ["req_strength", "req_dexterity", "req_intelligence", "req_faith"];
+			
+			var scalingFields = ["strength_scl", "dexterity_scl", "magic_scl", "fire_scl", "lightning_scl", "dark_scl"];
+			
+			var intFields = ["physical_dmg", "magic_dmg", "fire_dmg", "lightning_dmg", "dark_dmg", "poison_effect", "bleed_effect", "counter_strength", "poise_damage", "shot_range", "casting_speed", "stability", "durability"];
+			
+			var damageReductionFields = ["physical_def", "magic_def", "fire_def", "lightning_def", "dark_def", "poison_def", "bleed_def", "petrify_def", "curse_def"];
+			
+			var isValid = true;
+			
+			isValid = validateWeaponName("name") && isValid;
+			isValid = validateUpgradeType("upgrades_with") && isValid;
+			isValid = validateWeaponType("weapon_type") && isValid;
+			isValid = validateDamageTypes("damage_types") && isValid;
+			
+			var len = requiredStatFields.length;
+			for (var i = 0; i < len; i++) {
+				isValid = validateRequiredStat(requiredStatFields[i]) && isValid;
+			}
+			
+			len = scalingFields.length;
+			for (i = 0; i < len; i++) {
+				isValid = validateScaling(scalingFields[i]) && isValid;
+			}
+			
+			len = intFields.length;
+			for (i = 0; i < len; i++) {
+				isValid = validateInt(intFields[i]) && isValid;
+			}
+			
+			len = damageReductionFields.length;
+			for (i = 0; i < len; i++) {
+				isValid = validateDamageReduction(damageReductionFields[i]) && isValid;
+			}
+			
+			isValid = validateFloat("weight") && isValid;
+			
+			if (isValid) {
+				// get number of scaling stats
+				// validate damage samples
+				// calculate scaling
+					// 
+			}
+		}
+		
+		function validateWeaponName(id) {
+			var text = document.getElementById(id).value;
+			var valid = (/^[a-z' ]+$/i).test(text);
+			
+			handleError(valid, id);
+			
+			return valid;
+		}
+		
+		function validateUpgradeType(name) {
+			var radioButtons = document.getElementsByName(name);
+			
+			var valid = false;
+			
+			for (var i = 0; i < radioButtons.length; i++) {
+				if (radioButtons[i].checked) {
+					valid = true;
+					break;
+				}
+			}
+			
+			handleError(valid, name);
+			
+			return valid;
+		}
+		
+		function validateWeaponType(id) {
+			var text = document.getElementById(id).value;
+			var valid = (/^[a-z ]+$/i).test(text);
+			
+			handleError(valid, id);
+			
+			return valid;
+		}
+		
+		function validateDamageTypes(id) {
+			var text = document.getElementById(id).value;
+			var valid = (/^[a-z,\/ ]+$/i).test(text);
+			
+			handleError(valid, id);
+			
+			return valid;
+		}
+		
+		function validateInt(id) {
+			var text = document.getElementById(id).value;
+			var valid = !isNaN(parseInt(text)) && isFinite(text);
+			
+			handleError(valid, id);
+			
+			return valid;
+		}
+		
+		function validateFloat(id) {
+			var text = document.getElementById(id).value;
+			var valid = !isNaN(parseFloat(text)) && isFinite(text);
+			
+			handleError(valid, id);
+			
+			return valid;
+		}
+		
+		function validateRequiredStat(id) {
+			var text = document.getElementById(id).value;
+			var valid = !isNaN(parseInt(text)) && isFinite(text);
+			
+			if (valid) {
+				var intVal = parseInt(text);
+				
+				if (intVal < 0 || intVal > 99) {
+					valid = false;
+				}
+			}
+			
+			handleError(valid, id);
+			
+			return valid;			
+		}
+		
+		function validateScaling(id) {
+			var text = document.getElementById(id).value;
+			var valid = (/^[edcbasn]$/i).test(text);
+			
+			handleError(valid, id);
+			
+			return valid;
+		}
+		
+		function validateDamageReduction(id) {
+			var text = document.getElementById(id).value;
+			var valid = !isNaN(parseFloat(text)) && isFinite(text);
+			
+			if (valid) {
+				var floatVal = parseFloat(text);
+				
+				if (floatVal < 0 || floatVal > 100) {
+					valid = false;
+				}
+			}
+			
+			handleError(valid, id);
+			
+			return valid;
+		}
+		
+		function handleError(valid, id) {
+			var div = document.getElementById(id.concat("_error"));
+			if (!valid) {
+				div.innerHTML = "Invalid";
+			} else {
+				div.innerHTML = "";
+			}
+		}
+		
+		function parseName(id) {
+			
+		}
+		
+		function parseUpgradesWith(id) {
+			
+		}
+		
+		function parseWeaponType(id) {
+			
+		}
+		
+		function parseDamageTypes(id) {
+			
+		}
+		
+		function parseRequiredStats(strID, dexID, intID, fthID) {
+			
+		}
+		
+		function parseScaling(strID, dexID, magID, firID, lgtID, drkID) {
+			
+		}
+		
+		function parseBaseDamage(phyID, magID, firID, lgtID, drkID) {
+			
+		}
+		
+		function parseDamageReduction(phyID, magID, firID, lgtID, drkID, psnID, bldID, ptrID, crsID) {
+			
+		}
+		
+	</script>
+	
+</body>
+</html>
